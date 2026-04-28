@@ -19,6 +19,7 @@ This repo configures a fully local AI-assisted development environment. Models a
 Three models are supported, all sourced from unsloth on Hugging Face:
 
 - **Qwen3.6-35B-A3B** — default model
+- **Qwen3.6-27B**
 - **Gemma 4 31B IT**
 - **Gemma 4 26B A4B IT**
 
@@ -36,7 +37,7 @@ llama-server \
 ### Launch opencode with web search enabled
 
 ```bash
-OPENCODE_ENABLE_EXA=1 opencode web
+OPENCODE_ENABLE_EXA=1 OPENCODE_EXPERIMENTAL_LSP_TOOL=true opencode web
 ```
 
 ## Downloading Models
@@ -47,21 +48,28 @@ Download a model (and its multimodal projector) from Hugging Face using the `hf`
 hf download unsloth/Qwen3.6-35B-A3B-GGUF \
     --local-dir unsloth/Qwen3.6-35B-A3B-GGUF \
     --include "*mmproj-F16*" \
-    --include "*UD-Q4_K_XL*"
+    --include "*UD-Q6_K_XL*"
+```
+
+```bash
+hf download unsloth/Qwen3.6-27B-GGUF \
+    --local-dir unsloth/Qwen3.6-27B-GGUF \
+    --include "*mmproj-F16*" \
+    --include "*UD-Q6_K_XL*"
 ```
 
 ```bash
 hf download unsloth/gemma-4-31B-it-GGUF \
     --local-dir unsloth/gemma-4-31B-it-GGUF \
     --include "*mmproj-BF16*" \
-    --include "*UD-Q8_K_XL*"
+    --include "*UD-Q6_K_XL*"
 ```
 
 ```bash
 hf download unsloth/gemma-4-26B-A4B-it-GGUF \
     --local-dir unsloth/gemma-4-26B-A4B-it-GGUF \
     --include "*mmproj-BF16*" \
-    --include "*UD-Q8_K_XL*"
+    --include "*UD-Q6_K_XL*"
 ```
 
 ## Playwright CLI
