@@ -1,0 +1,22 @@
+# Sandbox artifacts
+.sbx/
+.agent-runs/
+.agent-logs/
+.agent-research-cache/
+
+# Secrets and local environment
+*.local.env
+*.secret
+*.local
+agent/secrets/
+agent/.aws-credentials.local
+
+# macOS
+.DS_Store
+*.swp
+*.swo
+*~
+
+# IDE
+.vscode/
+.idea/
