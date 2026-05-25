@@ -13,7 +13,7 @@ cp agent/opencode/opencode.example.jsonc agent/opencode/opencode.jsonc
 
 - **Provider**: llama.cpp-local (http://host.docker.internal:1234/v1)
 - **Model**: Qwen3.6-35B-A3B
-- **MCP**: AWS MCP enabled via uvx mcp-proxy-for-aws
+- **MCP**: AWS MCP Server (GA) via mcp-proxy-for-aws — tools: call_aws, search/read_documentation, run_script, Skills
 - **Permissions**: Unified agent role with allow/ask posture
 
 ## Switching Models

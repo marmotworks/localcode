@@ -158,7 +158,7 @@ This project supports a unified `agent` role running inside Docker Sandboxes (`s
 - **Sandboxing**: Docker Sandboxes (`sbx`) provide microVM isolation
 - **Inference**: llama.cpp `llama-server` on port 1234 (host), accessible via `host.docker.internal:1234` from sandbox
 - **Model**: Qwen3.6-35B-A3B (default)
-- **Tools**: bash, edit, read, grep, glob, lsp, webfetch, websearch, AWS MCP
+- **Tools**: bash, edit, read, grep, glob, lsp, webfetch, websearch, AWS MCP (GA: call_aws, search/read_documentation, run_script, Skills)
 - **Discord**: TODO — separate integration planned (see `agent/discord/`)
 
 ### Safety

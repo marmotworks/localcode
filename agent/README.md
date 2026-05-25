@@ -5,7 +5,8 @@
 This project uses a unified `agent` role running inside Docker Sandboxes (`sbx`) with:
 - Local inference: llama.cpp `llama-server` on port 1234
 - Model: Qwen3.6-35B-A3B
-- Tools: bash, edit, read, grep, glob, lsp, webfetch, websearch, AWS MCP
+- Tools: bash, edit, read, grep, glob, lsp, webfetch, websearch, AWS MCP (GA)
+- AWS MCP tools: call_aws, search_documentation, read_documentation, run_script, Skills
 - Discord frontend: TODO — separate integration planned
 
 ## Quick Start
