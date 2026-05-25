@@ -12,6 +12,7 @@ This repo configures a fully local AI-assisted development environment. Models a
 |------|-------------|
 | `opencode.json` | Opencode configuration — selects the default model, enables tools (web search, code search), and defines available models with their context/output limits. |
 | `config.ini` | llama.cpp preset configuration. |
+| `agent/` | Agent sandbox configuration, scripts, and documentation. |
 | `LICENSE` | License for this repository. |
 
 ## Models
@@ -134,6 +135,41 @@ You can also set the `PLAYWRIGHT_CLI_SESSION` environment variable:
 ```bash
 PLAYWRIGHT_CLI_SESSION=example opencode
 ```
+
+## Agent Sandbox Operations
+
+This project supports a unified `agent` role running inside Docker Sandboxes (`sbx`) for secure, isolated coding, research, and AWS operations.
+
+### Quick Start
+
+```bash
+# Start a sandboxed agent session
+./agent/scripts/sbx-agent.sh "your task prompt"
+
+# Verify OpenCode is inside sbx
+./agent/scripts/verify-sandbox.sh
+
+# Check llama-server connectivity
+./agent/scripts/check-llama-server.sh
+```
+
+### Key Components
+
+- **Sandboxing**: Docker Sandboxes (`sbx`) provide microVM isolation
+- **Inference**: llama.cpp `llama-server` on port 1234 (host), accessible via `host.docker.internal:1234` from sandbox
+- **Model**: Qwen3.6-35B-A3B (default)
+- **Tools**: bash, edit, read, grep, glob, lsp, webfetch, websearch, AWS MCP (GA: call_aws, search/read_documentation, run_script, Skills)
+- **Discord**: TODO — separate integration planned (see `agent/discord/`)
+
+### Safety
+
+- OpenCode runs inside `sbx`, not on the host
+- No host `~/.ssh`, `~/.aws`, or shell history accessible from sandbox
+- Git changes require branch/worktree review before merge
+- AWS mutations require explicit launch-time approval
+- Network policy starts permissive, can be tightened from `sbx policy log`
+
+See `agent/README.md` for detailed documentation.
 
 ## TODO
 
