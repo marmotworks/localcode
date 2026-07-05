@@ -1,5 +1,5 @@
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://opencode.ai/config.json", 
   "autoupdate": true,
   "formatter": true,
   "lsp": true,
@@ -28,21 +28,28 @@
         "gemma-4-31b-it-qat": {
           "name": "gemma-4-31b-it-qat",
           "limit": {
-            "context": 176608,
+            "context": 262144,
             "output": 32768
-          }
-        },
-        "North-Mini-Code": {
-          "name": "North-Mini-Code",
-          "limit": {
-            "context": 256000,
-            "output": 64000
           }
         },
         "gemma-4-26b-a4b-it": {
           "name": "gemma-4-26b-a4b-it",
           "limit": {
-            "context": 176608,
+            "context": 262144,
+            "output": 32768
+          }
+        },
+        "gemma-4-12b-it-qat": {
+          "name": "gemma-4-12b-it-qat",
+          "limit": {
+            "context": 262144,
+            "output": 32768
+          }
+        },        
+        "North-Mini-Code": {
+          "name": "North-Mini-Code",
+          "limit": {
+            "context": 262144,
             "output": 32768
           }
         },
@@ -53,8 +60,15 @@
             "output": 32768
           }
         },
-        "Qwen3.6-27B-MTP": {
-          "name": "Qwen3.6-27B-MTP",
+        "Qwen3.6-35B-A3B-Coder": {
+          "name": "Qwen3.6-35B-A3B-Coder",
+          "limit": {
+            "context": 176608,
+            "output": 32768
+          }
+        },
+        "Qwen3.6-27B-Coder": {
+          "name": "Qwen3.6-27B-Coder",
           "limit": {
             "context": 176608,
             "output": 32768

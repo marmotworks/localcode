@@ -15,6 +15,7 @@ This repo configures a fully local AI-assisted development environment. Models a
 
 ## Models
 
+- **North-Mini-Code**
 - **Qwen3.6-35B-A3B**
 - **Qwen3.6-27B**
 - **Gemma 4 31B IT**
@@ -71,8 +72,8 @@ hf download unsloth/gemma-4-31B-it-GGUF \
 ```
 
 ```bash
-hf download unsloth/gemma-4-26B-A4B-it-GGUF \
-    --local-dir unsloth/gemma-4-26B-A4B-it-GGUF \
+hf download unsloth/gemma-4-12B-it-qat-GGUF \
+    --local-dir unsloth/gemma-4-12B-it-qat-GGUF \
     --include "*mmproj-BF16*" \
     --include "*UD-Q6_K_XL*"
 ```
@@ -134,5 +135,16 @@ You can also set the `PLAYWRIGHT_CLI_SESSION` environment variable:
 PLAYWRIGHT_CLI_SESSION=example opencode
 ```
 
-## TODO
+## TODOs
 
+### Tech Research
+
+### Pending Feature Development
+
+### More Stuff That Needs Refinement/Classification
+
+[pi + sbx](https://github.com/cuolm/pi-sbx-llamacpp)
+[balatro based benchmark](https://github.com/alesha-pro/evalatro)
+[opencode web interface](https://github.com/openchamber/openchamber)
+[hermes agent](https://github.com/nousresearch/hermes-agent)
+[deep research](https://github.com/langchain-ai/local-deep-researcher)
