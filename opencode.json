@@ -1,6 +1,20 @@
 {
+<<<<<<< Updated upstream
   "$schema": "https://opencode.ai/config.json", 
   "model": "Qwen3.6-27B",  
+=======
+  "$schema": "https://opencode.ai/config.json",
+  "autoupdate": true,
+  "formatter": true,
+  "lsp": true,
+  "model": "North-Mini-Code",
+  "permission": {
+    "question": "allow",
+    "websearch": "allow",
+    "webfetch": "allow",
+    "lsp": "allow"
+  },
+>>>>>>> Stashed changes
   "tools": {
     "websearch": true,
     "codesearch": true
@@ -15,11 +29,18 @@
         "baseURL": "http://127.0.0.1:8001/v1"
       },
       "models": {
-        "gemma-4-31b-it": {
-          "name": "gemma-4-31b-it",
+        "gemma-4-31b-it-qat": {
+          "name": "gemma-4-31b-it-qat",
           "limit": {
             "context": 176608,
             "output": 32768
+          }
+        },
+        "North-Mini-Code": {
+          "name": "North-Mini-Code",
+          "limit": {
+            "context": 256000,
+            "output": 64000
           }
         },
         "gemma-4-26b-a4b-it": {
@@ -32,18 +53,38 @@
         "Qwen3.6-35B-A3B": {
           "name": "Qwen3.6-35B-A3B",
           "limit": {
+<<<<<<< Updated upstream
             "context": 176608,
             "output": 32768
           }
         },
         "Qwen3.6-27B": {
           "name": "Qwen3.6-27B",
+=======
+            "context": 262144,
+            "output": 32768
+          }
+        },
+        "Qwen3.6-27B-MTP": {
+          "name": "Qwen3.6-27B-MTP",
+>>>>>>> Stashed changes
           "limit": {
             "context": 176608,
             "output": 32768
           }
         }
       }
+    }
+  },
+  "mcp": {
+    "aws-mcp": {
+      "type": "local",
+      "command": [
+        "uvx",
+        "mcp-proxy-for-aws==1.6.0",
+        "https://aws-mcp.us-east-1.api.aws/mcp",
+        "--metadata", "AWS_REGION=us-east-1"
+      ]
     }
   }
 }
