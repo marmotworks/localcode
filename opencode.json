@@ -1,8 +1,4 @@
 {
-<<<<<<< Updated upstream
-  "$schema": "https://opencode.ai/config.json", 
-  "model": "Qwen3.6-27B",  
-=======
   "$schema": "https://opencode.ai/config.json",
   "autoupdate": true,
   "formatter": true,
@@ -14,7 +10,6 @@
     "webfetch": "allow",
     "lsp": "allow"
   },
->>>>>>> Stashed changes
   "tools": {
     "websearch": true,
     "codesearch": true
@@ -53,21 +48,12 @@
         "Qwen3.6-35B-A3B": {
           "name": "Qwen3.6-35B-A3B",
           "limit": {
-<<<<<<< Updated upstream
-            "context": 176608,
-            "output": 32768
-          }
-        },
-        "Qwen3.6-27B": {
-          "name": "Qwen3.6-27B",
-=======
             "context": 262144,
             "output": 32768
           }
         },
         "Qwen3.6-27B-MTP": {
           "name": "Qwen3.6-27B-MTP",
->>>>>>> Stashed changes
           "limit": {
             "context": 176608,
             "output": 32768

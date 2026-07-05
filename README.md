@@ -12,13 +12,10 @@ This repo configures a fully local AI-assisted development environment. Models a
 |------|-------------|
 | `opencode.json` | Opencode configuration — selects the default model, enables tools (web search, code search), and defines available models with their context/output limits. |
 | `config.ini` | llama.cpp preset configuration. |
-| `LICENSE` | License for this repository. |
 
 ## Models
 
-Three models are supported, all sourced from unsloth on Hugging Face:
-
-- **Qwen3.6-35B-A3B** — default model
+- **Qwen3.6-35B-A3B**
 - **Qwen3.6-27B**
 - **Gemma 4 31B IT**
 - **Gemma 4 26B A4B IT**
@@ -45,12 +42,12 @@ llama-server \
 ### Launch opencode with web search enabled
 
 ```bash
-OPENCODE_ENABLE_EXA=1 OPENCODE_EXPERIMENTAL_LSP_TOOL=true opencode web
+OPENCODE_ENABLE_EXA=1 opencode
 ```
 
 ## Downloading Models
 
-Download a model (and its multimodal projector) from Hugging Face using the `hf` CLI:
+Download a model (and its multimodal projector) from Hugging Face using the `hf` CLI, from the llama-server workspace directory:
 
 ```bash
 hf download unsloth/Qwen3.6-35B-A3B-GGUF \
@@ -93,12 +90,6 @@ hf download unsloth/gemma-4-26B-A4B-it-GGUF \
 ```bash
 npm install -g @playwright/cli@latest
 playwright-cli --help
-```
-
-### Installing Skills
-
-```bash
-playwright-cli install --skills
 ```
 
 ### Usage
@@ -145,5 +136,3 @@ PLAYWRIGHT_CLI_SESSION=example opencode
 
 ## TODO
 
-- Investigate [QBit](https://github.com/qbit)
-- Investigate the [iTerm2 AI plugin](https://iterm2.com/)
